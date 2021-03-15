@@ -40,9 +40,11 @@ exports.addPost = async (req, res, next) => {
     return res.json(post)
 }
 
-exports.deletePost = () => {};
+exports.deletePost = () => {
+};
 
-exports.getPostById = () => {};
+exports.getPostById = () => {
+};
 
 exports.getPostsByUser = async (req, res, next) => {
     const posts = await Post.find({postedBy: req.profile._id})
@@ -79,4 +81,30 @@ exports.toggleLike = async (req, res) => {
     return res.json(post)
 }
 
-exports.toggleComment = () => {}
+exports.toggleComment = async (req, res) => {
+    const {postId, comment} = req.body
+    let operator
+    let data
+    if (req.url.includes('uncomment')) {
+        operator = '$pull'
+        data = {
+            _id: comment._id
+        }
+    } else {
+        operator = '$push'
+        data = {
+            text: comment.text,
+            postedBy: req.user._id
+        }
+    }
+    const updatedPost = await Post.findOneAndUpdate({
+        _id: postId
+    }, {
+        [operator]: {comments: data}
+    }, {
+        new: true
+    })
+        .populate('postedBy', '_id name avatar')
+        .populate('comments.postedBy', '_id name avatar')
+   return res.json(updatedPost)
+}
