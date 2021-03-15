@@ -25,14 +25,14 @@
         <counts>
           <entry key="env" value="1" />
           <entry key="jpg" value="1" />
-          <entry key="js" value="7" />
+          <entry key="js" value="8" />
           <entry key="json" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key=".env file" value="1" />
-          <entry key="ECMAScript 6" value="7" />
+          <entry key="ECMAScript 6" value="8" />
           <entry key="Image" value="1" />
           <entry key="JSON" value="1" />
         </counts>
@@ -40,14 +40,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="env" value="121" />
-          <entry key="js" value="1141" />
+          <entry key="js" value="1335" />
           <entry key="json" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key=".env file" value="121" />
-          <entry key="ECMAScript 6" value="1141" />
+          <entry key="ECMAScript 6" value="1335" />
           <entry key="JSON" value="16" />
         </counts>
       </usages-collector>
@@ -67,15 +67,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/controllers/authController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="795">
-              <caret line="53" column="22" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="22" />
+            <state relative-caret-position="766">
+              <caret line="68" column="32" selection-start-line="68" selection-start-column="32" selection-end-line="68" selection-end-column="32" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/controllers/postController.js">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -246,12 +241,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1615798704685</updated>
-      <workItem from="1615798705834" duration="2556000" />
+      <workItem from="1615798705834" duration="2798000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2556000" />
+    <option name="totallyTimeSpent" value="2798000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-532" y="-1417" width="2560" height="1417" extended-state="6" />
@@ -259,11 +254,11 @@
     <layout>
       <window_info id="npm" side_tool="true" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22607325" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22607325" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.32981133" />
+      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.32981133" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -290,9 +285,6 @@
           <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/controllers/postController.js">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/server/models/Post.js">
       <provider selected="true" editor-type-id="text-editor" />
@@ -324,10 +316,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/server/controllers/postController.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-629" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server/controllers/authController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="795">
-          <caret line="53" column="22" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="22" />
+        <state relative-caret-position="766">
+          <caret line="68" column="32" selection-start-line="68" selection-start-column="32" selection-end-line="68" selection-end-column="32" />
         </state>
       </provider>
     </entry>
