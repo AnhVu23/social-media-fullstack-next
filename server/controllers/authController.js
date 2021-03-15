@@ -54,7 +54,12 @@ exports.signin = async (req, res, next) => {
     })(req, res, next)
 }
 
-exports.signout = () => {
+exports.signout = (req, res, next) => {
+    res.clearCookie('next-cookie.sid')
+    req.logout()
+    res.json({
+        message: 'You signed out'
+    })
 }
 
 exports.checkAuth = () => {
