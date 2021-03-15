@@ -38,17 +38,25 @@ exports.getUserProfile = async (req, res) => {
     res.json(req.profile)
 };
 
-exports.getUserFeed = () => {
-};
+exports.getUserFeed = async (req, res) => {
+    const {following, _id} = req.profile
+    following.push(_id)
+    const users = await User.find({_id: {$nin: following}})
+        .select('_id name avatar')
+    res.json(users)
+}
 
-exports.uploadAvatar = () => {
-};
-
-exports.resizeAvatar = () => {
-};
-
-exports.updateUser = () => {
-};
+exports.updateUser = async (req, res, next) => {
+    req.body.updatedAt = new Date().toISOString()
+    return User.findByIdAndUpdate({
+        _id: req.user._id
+    }, {
+        $set: req.body
+    }, {
+        new: true,
+        runValidators: true
+    })
+}
 
 exports.deleteUser = async (req, res) => {
     const {userId} = req.params
@@ -78,7 +86,7 @@ exports.addFollower = async (req, res, next) => {
     }, {
         new: true
     })
-    return res.json({user})
+    return res.json(user)
 };
 
 exports.deleteFollowing = async (req, res, next) => {
@@ -100,5 +108,5 @@ exports.deleteFollower = async (req, res, next) => {
     }, {
         new: true
     })
-    return res.json({user})
+    return res.json(user)
 }
