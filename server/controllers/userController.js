@@ -1,4 +1,6 @@
 const mongoose = require('mongoose')
+const multer = require('multer')
+const jimp = require('jimp')
 const User = mongoose.model('User')
 
 exports.getUsers = async (req, res, next) => {
@@ -46,10 +48,30 @@ exports.getUserFeed = async (req, res) => {
     res.json(users)
 }
 
-exports.uploadAvatar = () => {
+const avatarUploadOptions = {
+    storage: multer.memoryStorage(),
+    limits: {
+        fileSize: 1024 * 1024
+    },
+    fileFilter: (req, file, next) => {
+        if (file.mimeType.startsWith('image/')) {
+            return next(null, true)
+        }
+        return next(null, false)
+    }
 }
 
-exports.resizeAvatar = () => {
+exports.uploadAvatar = multer(avatarUploadOptions).single('avatar')
+
+exports.resizeAvatar = async (req, res, next) => {
+    if (!req.file) {
+        return next()
+    }
+    const extension = req.file.mimeType.split('/')[1]
+    req.body.avatar = `/static/upload/avatars/${req.user.name}-${Date.now()}/${extension}`
+    const image = await jimp.read(req.file.buffer)
+    await image.resize(250, jimp.AUTO)
+    await image.write(`${req.body.avatar}`)
 }
 
 exports.updateUser = async (req, res, next) => {
