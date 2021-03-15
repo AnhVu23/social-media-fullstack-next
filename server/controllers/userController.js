@@ -46,9 +46,15 @@ exports.getUserFeed = async (req, res) => {
     res.json(users)
 }
 
+exports.uploadAvatar = () => {
+}
+
+exports.resizeAvatar = () => {
+}
+
 exports.updateUser = async (req, res, next) => {
     req.body.updatedAt = new Date().toISOString()
-    return User.findByIdAndUpdate({
+    const user = await User.findByIdAndUpdate({
         _id: req.user._id
     }, {
         $set: req.body
@@ -56,6 +62,7 @@ exports.updateUser = async (req, res, next) => {
         new: true,
         runValidators: true
     })
+    return res.json(user)
 }
 
 exports.deleteUser = async (req, res) => {
