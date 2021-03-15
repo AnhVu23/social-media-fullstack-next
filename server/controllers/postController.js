@@ -40,11 +40,26 @@ exports.addPost = async (req, res, next) => {
     return res.json(post)
 }
 
-exports.deletePost = () => {
-};
+exports.deletePost = async (req, res) => {
+    if (req.isPoster) {
+        await Post.findOneAndDelete({
+            _id: req.post._id
+        })
+        return res.status(204)
+    }
+    return res.status(403).json('Forbidden')
+}
 
-exports.getPostById = () => {
-};
+exports.getPostById = async (req, res, next, id) => {
+    const post = await Post.findOne({_id: id})
+    req.post = post
+    const posterId = mongoose.Types.ObjectId(req.post.postedBy._id)
+    if (req.user && posterId.equals(req.user._id)) {
+        req.isPoster = true
+        return next()
+    }
+    next()
+}
 
 exports.getPostsByUser = async (req, res, next) => {
     const posts = await Post.find({postedBy: req.profile._id})
