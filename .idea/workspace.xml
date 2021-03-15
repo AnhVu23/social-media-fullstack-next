@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="57085e87-c1f3-4659-bcbc-462ff6ed2b9c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/postController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/postController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/controllers/userController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/userController.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -28,14 +28,14 @@
         <counts>
           <entry key="env" value="1" />
           <entry key="jpg" value="1" />
-          <entry key="js" value="11" />
+          <entry key="js" value="12" />
           <entry key="json" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key=".env file" value="1" />
-          <entry key="ECMAScript 6" value="11" />
+          <entry key="ECMAScript 6" value="12" />
           <entry key="Image" value="1" />
           <entry key="JSON" value="1" />
         </counts>
@@ -43,14 +43,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="env" value="121" />
-          <entry key="js" value="3784" />
+          <entry key="js" value="4047" />
           <entry key="json" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key=".env file" value="121" />
-          <entry key="ECMAScript 6" value="3784" />
+          <entry key="ECMAScript 6" value="4047" />
           <entry key="JSON" value="16" />
         </counts>
       </usages-collector>
@@ -67,11 +67,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/controllers/userController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="73" column="40" selection-start-line="73" selection-start-column="40" selection-end-line="73" selection-end-column="40" />
+            <state>
+              <caret selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server/controllers/postController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="585">
+              <caret line="39" column="18" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -90,7 +99,11 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>express</find>
+      <find>avatar</find>
     </findStrings>
+    <replaceStrings>
+      <replace>image</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -103,6 +116,7 @@
         <option value="$PROJECT_DIR$/server/controllers/authController.js" />
         <option value="$PROJECT_DIR$/components/Navbar.js" />
         <option value="$PROJECT_DIR$/server/controllers/userController.js" />
+        <option value="$PROJECT_DIR$/server/controllers/postController.js" />
       </list>
     </option>
   </component>
@@ -212,12 +226,12 @@
       <option name="presentableId" value="Default" />
       <updated>1615798704685</updated>
       <workItem from="1615798705834" duration="7840000" />
-      <workItem from="1615825514106" duration="1034000" />
+      <workItem from="1615825514106" duration="1875000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8874000" />
+    <option name="totallyTimeSpent" value="9715000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-532" y="-1440" width="2560" height="1440" extended-state="0" />
@@ -257,9 +271,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-629" />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/controllers/postController.js">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/server/controllers/authController.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -311,8 +322,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/controllers/userController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="73" column="40" selection-start-line="73" selection-start-column="40" selection-end-line="73" selection-end-column="40" />
+        <state>
+          <caret selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/controllers/postController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="39" column="18" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
         </state>
       </provider>
     </entry>
