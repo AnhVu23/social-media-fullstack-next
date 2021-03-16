@@ -4,6 +4,7 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import ShareOutlined from "@material-ui/icons/ShareOutlined";
 import withStyles from "@material-ui/core/styles/withStyles";
+import ActiveLink from './ActiveLink'
 
 const Navbar = ({
                     classes,
@@ -12,26 +13,32 @@ const Navbar = ({
                         auth
                     }
                 }) => {
-    const { user = {}} = auth || {}
+    const {user = {}} = auth || {}
     return (
         <AppBar className={classes.appBar} position={router.pathname === '/' ? 'fixed' : 'static'}>
             <Toolbar>
-                <ShareOutlined className={classes.icon}/>
-                <Typography variant='h5'
-                            component='h1'
-                            className={classes.toolbarTitle}
-                >
-                    NextConnect
-                </Typography>
+                <ActiveLink href='/'>
+                    <ShareOutlined className={classes.icon}/>
+                </ActiveLink>
+                <ActiveLink href='/'>
+                    <Typography variant='h5'
+                                component='h1'
+                                className={classes.toolbarTitle}
+                    >
+                        NextConnect
+                    </Typography>
+                </ActiveLink>
                 {user._id ? (
                     <div>
-                        <Button>Profile</Button>
+                        <Button>
+                            <ActiveLink href='/profile'>Profile</ActiveLink>
+                        </Button>
                         <Button variant='outlined'>Sign out</Button>
                     </div>
                 ) : (
                     <div>
-                        <Button>Sign in</Button>
-                        <Button variant='outlined'>Sign up</Button>
+                        <Button><ActiveLink href='/signin'>Sign in</ActiveLink></Button>
+                        <Button variant='outlined'><ActiveLink href='/signup'>Sign up</ActiveLink></Button>
                     </div>
                 )}
             </Toolbar>

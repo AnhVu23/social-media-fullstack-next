@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="57085e87-c1f3-4659-bcbc-462ff6ed2b9c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/server/controllers/postController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/postController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ActiveLink.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/ActiveLink.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Navbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/getPageContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/getPageContext.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -27,14 +29,14 @@
         <counts>
           <entry key="env" value="1" />
           <entry key="jpg" value="1" />
-          <entry key="js" value="12" />
+          <entry key="js" value="16" />
           <entry key="json" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key=".env file" value="1" />
-          <entry key="ECMAScript 6" value="12" />
+          <entry key="ECMAScript 6" value="16" />
           <entry key="Image" value="1" />
           <entry key="JSON" value="1" />
         </counts>
@@ -42,14 +44,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="env" value="121" />
-          <entry key="js" value="5449" />
+          <entry key="js" value="6067" />
           <entry key="json" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key=".env file" value="121" />
-          <entry key="ECMAScript 6" value="5449" />
+          <entry key="ECMAScript 6" value="6067" />
           <entry key="JSON" value="16" />
         </counts>
       </usages-collector>
@@ -58,37 +60,46 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
+        <entry file="file://$PROJECT_DIR$/pages/_app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="12" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/controllers/userController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="590">
-              <caret line="91" column="25" lean-forward="true" selection-start-line="91" selection-start-column="4" selection-end-line="91" selection-end-column="25" />
+            <state relative-caret-position="-48">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+                <element signature="e#105#147#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/server/controllers/postController.js">
+        <entry file="file://$PROJECT_DIR$/components/Navbar.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="434">
-              <caret line="47" column="29" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="29" />
+            <state relative-caret-position="594">
+              <caret line="40" column="76" selection-start-line="40" selection-start-column="76" selection-end-line="40" selection-end-column="76" />
+              <folding>
+                <element signature="e#0#46#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.env">
+        <entry file="file://$PROJECT_DIR$/lib/getPageContext.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+            <state relative-caret-position="150">
+              <caret line="10" column="15" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
+              <folding>
+                <element signature="e#0#37#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/components/ActiveLink.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="43" selection-start-line="2" selection-start-column="43" selection-end-line="2" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -113,9 +124,11 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/server/.env" />
         <option value="$PROJECT_DIR$/server/controllers/authController.js" />
-        <option value="$PROJECT_DIR$/components/Navbar.js" />
         <option value="$PROJECT_DIR$/server/controllers/userController.js" />
         <option value="$PROJECT_DIR$/server/controllers/postController.js" />
+        <option value="$PROJECT_DIR$/lib/getPageContext.js" />
+        <option value="$PROJECT_DIR$/components/ActiveLink.js" />
+        <option value="$PROJECT_DIR$/components/Navbar.js" />
       </list>
     </option>
   </component>
@@ -136,10 +149,10 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="-448" />
-    <option name="y" value="-1382" />
+    <option name="x" value="-532" />
+    <option name="y" value="-1440" />
     <option name="width" value="2560" />
-    <option name="height" value="1417" />
+    <option name="height" value="1440" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -159,6 +172,16 @@
               <item name="next-connect" type="b2602c69:ProjectViewProjectNode" />
               <item name="next-connect" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="next-connect" type="b2602c69:ProjectViewProjectNode" />
+              <item name="next-connect" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="next-connect" type="b2602c69:ProjectViewProjectNode" />
+              <item name="next-connect" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="next-connect" type="b2602c69:ProjectViewProjectNode" />
@@ -225,18 +248,18 @@
       <option name="presentableId" value="Default" />
       <updated>1615798704685</updated>
       <workItem from="1615798705834" duration="7840000" />
-      <workItem from="1615825514106" duration="2982000" />
+      <workItem from="1615825514106" duration="5124000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10822000" />
+    <option name="totallyTimeSpent" value="12964000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-532" y="-1440" width="2560" height="1440" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22607325" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22607325" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -250,7 +273,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.3189781" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.3189781" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -302,23 +325,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/Navbar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="556">
-          <caret line="39" column="2" selection-start-line="39" selection-start-column="2" selection-end-line="39" selection-end-column="2" />
-          <folding>
-            <element signature="e#0#46#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="12" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/controllers/userController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="590">
@@ -330,6 +336,50 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="434">
           <caret line="47" column="29" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="12" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/_app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-48">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#105#147#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/getPageContext.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="15" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/ActiveLink.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="43" selection-start-line="2" selection-start-column="43" selection-end-line="2" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/Navbar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="40" column="76" selection-start-line="40" selection-start-column="76" selection-end-line="40" selection-end-column="76" />
+          <folding>
+            <element signature="e#0#46#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
