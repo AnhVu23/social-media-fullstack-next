@@ -1,20 +1,98 @@
-// import Typography from "@material-ui/core/Typography";
-// import Avatar from "@material-ui/core/Avatar";
-// import FormControl from "@material-ui/core/FormControl";
-// import Paper from "@material-ui/core/Paper";
-// import Input from "@material-ui/core/Input";
-// import InputLabel from "@material-ui/core/InputLabel";
-// import Button from "@material-ui/core/Button";
-// import Snackbar from "@material-ui/core/Snackbar";
-// import Lock from "@material-ui/icons/Lock";
+import Lock from "@material-ui/icons/Lock";
+import Router from 'next/router'
 import withStyles from "@material-ui/core/styles/withStyles";
+import {signinUser} from "../lib/auth";
+import Paper from "@material-ui/core/Paper/Paper";
+import Avatar from "@material-ui/core/Avatar/Avatar";
+import Gavel from "@material-ui/core/SvgIcon/SvgIcon";
+import Typography from "@material-ui/core/Typography/Typography";
+import FormControl from "@material-ui/core/FormControl/FormControl";
+import InputLabel from "@material-ui/core/InputLabel/InputLabel";
+import Input from "@material-ui/core/Input/Input";
+import Button from "@material-ui/core/Button/Button";
+import Snackbar from "@material-ui/core/Snackbar/Snackbar";
+import React from "react";
 
 class Signin extends React.Component {
-  state = {};
+    state = {
+        email: '',
+        password: '',
+        openError: false,
+        error: null,
+        isLoading: false
+    }
 
-  render() {
-    return <div>Signin</div>;
-  }
+    handleChange = (e) => {
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+    }
+
+    handleSubmit = async e => {
+        e.preventDefault()
+        try {
+            const {email, password} = this.state
+            this.setState({
+                isLoading: true,
+                error: null
+            })
+            const user = {
+                email,
+                password
+            }
+            await signinUser(user)
+            Router.push('/')
+        } catch (e) {
+            this.setState({
+                openError: true,
+                error: e.response ? e.response.data : e.message
+            })
+        } finally {
+            this.setState({
+                isLoading: false
+            })
+        }
+    }
+
+    render() {
+        const {classes} = this.props
+        const {error, openError, isLoading} = this.state
+        return (
+            <div className={classes.root}>
+                <Paper className={classes.paper}>
+                    <Avatar className={classes.avatar}>
+                        <Lock/>
+                    </Avatar>
+                    <Typography variant='h5' component='h1'>
+                        Sign in
+                    </Typography>
+                    <form className={classes.form} onSubmit={this.handleSubmit}>
+                        <FormControl margin='normal' required fullWidth>
+                            <InputLabel htmlFor='email'>Email</InputLabel>
+                            <Input name='email' type='text' onChange={this.handleChange}/>
+                        </FormControl>
+                        <FormControl margin='normal' required fullWidth>
+                            <InputLabel htmlFor='password'>Password</InputLabel>
+                            <Input name='password' type='password' onChange={this.handleChange}/>
+                        </FormControl>
+                        <Button type='submit' fullWidth variant='contained' color='primary' disabled={isLoading}>
+                            {isLoading ? 'Signing in ...' : 'Sign in'}
+                        </Button>
+                    </form>
+                    {error ? <Snackbar anchorOrigin={{
+                        vertical: 'bottom',
+                        horizontal: 'right'
+                    }} open={openError}
+                                       onClose={() => this.setState({
+                                           openError: false
+                                       })}
+                                       autoHideDuration={2000}
+                                       message={<span className={classes.snack}>{error}</span>}
+                    /> : null}
+                </Paper>
+            </div>
+        )
+    }
 }
 
 const styles = theme => ({
