@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import Typography from "@material-ui/core/Typography";
 import Avatar from "@material-ui/core/Avatar";
 import FormControl from "@material-ui/core/FormControl";
@@ -18,11 +19,18 @@ import VerifiedUserTwoTone from "@material-ui/icons/VerifiedUserTwoTone";
 import withStyles from "@material-ui/core/styles/withStyles";
 import {signupUser} from "../lib/auth";
 
+const Transition = (props) => (
+    <Slide {...props} direction='up'/>
+)
 class Signup extends React.Component {
   state = {
     email: '',
       name:'',
-      password: ''
+      password: '',
+      openError: false,
+      error: null,
+      openSuccess: false,
+      createdUser: null
   }
 
   handleChange = (e) => {
@@ -32,17 +40,38 @@ class Signup extends React.Component {
   }
 
   handleSubmit = async e => {
-    e.preventDefault()
-      const {name, email, password} = this.state
-      const user = {
-      name,
-          email,
-          password
-      }
-      const data = await signupUser(user)
+      e.preventDefault()
+    try {
+        const {name, email, password} = this.state
+        this.setState({
+            isLoading: true,
+            error: null
+        })
+        const user = {
+            name,
+            email,
+            password
+        }
+        const data = await signupUser(user)
+        this.setState({
+            createdUser: data.name,
+            openSuccess: true
+        })
+
+    } catch (e) {
+        this.setState({
+            openError: true,
+            error: e.response ? e.response.data : e.message
+        })
+    } finally {
+        this.setState({
+            isLoading: false
+        })
+    }
   }
   render() {
     const {classes} = this.props
+      const {error, openError, openSuccess, createdUser, isLoading} = this.state
     return (
         <div className={classes.root}>
           <Paper className={classes.paper}>
@@ -65,10 +94,41 @@ class Signup extends React.Component {
                     <InputLabel htmlFor='password'>Password</InputLabel>
                     <Input name='password' type='password' onChange={this.handleChange}/>
                 </FormControl>
-                <Button type='submit' fullWidth variant='contained' color='primary'>
-                  Sign up
+                <Button type='submit' fullWidth variant='contained' color='primary' disabled={isLoading}>
+                    {isLoading ? 'Signing up ...' : 'Sign up'}
                 </Button>
             </form>
+              {error ? <Snackbar anchorOrigin={{
+              vertical: 'bottom',
+                horizontal: 'right'
+            }} open={openError}
+                      onClose={() => this.setState({
+                          openError: false
+                      })}
+                      autoHideDuration={2000}
+                      message={<span className={classes.snack}>{error}</span>}
+            /> : null}
+            <Dialog open={openSuccess}
+                    disableBackdropClick={true}
+                    transitioncomponent={Transition}
+            >
+              <DialogTitle>
+                <VerifiedUserTwoTone className={classes.icon}/>
+                New Account
+              </DialogTitle>
+              <DialogContent>
+                <DialogContentText>
+                  User {createdUser} successfully created!
+                </DialogContentText>
+              </DialogContent>
+              <DialogActions>
+                <Button color='primary' variant='contained'>
+                  <Link href='/signin'>
+                      <a className={classes.signinLink}>Sign in</a>
+                  </Link>
+                </Button>
+              </DialogActions>
+            </Dialog>
           </Paper>
         </div>
     )
