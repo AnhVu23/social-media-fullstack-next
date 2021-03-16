@@ -3,7 +3,8 @@
 // import Typography from "@material-ui/core/Typography";
 // import Grid from "@material-ui/core/Grid";
 // import Button from "@material-ui/core/Button";
-import withStyles from "@material-ui/core/styles/withStyles";
+import withStyles from "@material-ui/core/styles/withStyles"
+import {authInitialProps} from "../lib/auth";
 
 class Index extends React.Component {
   state = {};
@@ -49,6 +50,8 @@ const styles = theme => ({
     paddingBottom: theme.spacing.unit * 6,
     margin: "0 auto"
   }
-});
+})
+
+Index.getInitialProps = authInitialProps()
 
 export default withStyles(styles)(Index);
